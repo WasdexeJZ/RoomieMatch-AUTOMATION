@@ -1,0 +1,8 @@
+*.zip
+
+/.vscode
+/backend
+/frontend
+/gotify-server
+/mysql-app
+/supertoken-core-mysql-auth
