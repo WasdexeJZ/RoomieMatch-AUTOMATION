@@ -1,3 +1,4 @@
 docker run --rm -v mysql-app_persistence_db_app_rm:/data -v "$(pwd)/mysql-app":/backup busybox tar czf /backup/mysql-app_persistence_db_app_rm.tar.gz -C /data .
-docker run --rm -v gotify-server_persistence_gotify_server_rm:/data -v "$(pwd)/gotify-server":/backup busybox tar czf /backup/gotify-server_persistence_gotify_server_rm.tar.gz -C /data .
 docker run --rm -v supertoken-core-mysql-auth_persistence_db_supertoken_rm:/data -v "$(pwd)/supertoken-core-mysql-auth":/backup busybox tar czf /backup/supertoken-core-mysql-auth_persistence_db_supertoken_rm.tar.gz -C /data .
+docker run --rm -v ntfy-server_persistence_ntfy_cache_rm:/data -v "$(pwd)/ntfy-server":/backup busybox tar czf /backup/ntfy-server_persistence_ntfy_cache_rm.tar.gz -C /data .
+docker run --rm -v ntfy-server_persistence_ntfy_etc_rm:/data -v "$(pwd)/ntfy-server":/backup busybox tar czf /backup/ntfy-server_persistence_ntfy_etc_rm.tar.gz -C /data .
