@@ -1,0 +1,1 @@
+docker kill mysql-app-rm supertoken-core-rm mysql-auth-rm ntfy-server-rm backend-rm
