@@ -1,0 +1,65 @@
+frontend 
+- notification foreground service to be persistent to connect to ntfy server
+- persistent storage for user information like settings, profile using hive
+- calling backend for api db services going through supertoken to have their jwt maybe??
+- calling backend for authentication services using supertoken
+- cryptography service using pointycastle
+- chat system that includes intercepting message from notification, if received, call api to get message and function to decrypt, store to sqlite database 
+    - if in chat page, create a seperate ntfy connection to get live info and update
+    - send message get public key from database, then enccrypt then send to database 
+    - also has to handle key rotation on load of app 
+    -  storage of the private key to sqllite
+    - storage of the chat messges into sqlite 
+
+
+
+
+backend
+
+
+services used and what they are for 
+- fastapi 
+    - backend to provide api to serve to client and also in python to do use case specific logic like the matching logic
+    - does encryption of notification 
+
+- supertokens 
+    - for authentication, handle email password validation, store email password hash, handle's client sesions, handles api permission checking for authorization, handles user deletion 
+    - uses mysql db to store user authentication data, session tokens
+
+- mysql database 
+    - to store user profile, user preference, user settings, user status, user pair matches, undelivered messages, user message public key 
+
+- ntfy notification service
+    - to push notification to flutter app
+    - receives trigger from backend to send notification to client app 
+    - has basic authentication to push notification to notification stream
+
+
+
+
+
+
+Flutter Mobile App
+Flutter Mobile App is the client facing app that the user uses. This would contain the Graphical User Interface for users to interact with our system. It also includes different services which allow the app to connect to our backend and notification service. Cryptography, messaging, forground task and persistent storage services are also included services bundled with the Flutter Mobile App to enable different functionalities of the app, thus creating a great user experience.
+
+
+
+
+
+
+
+
+flutter app connects to backend through supertoken sdk
+flutter app to ntfy server through ntfy client
+backend to databse 
+backend to supertoken 
+supertoken to mysql server
+
+
+
+
+
+
+
+
+
